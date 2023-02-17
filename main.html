@@ -7,10 +7,43 @@
 </head>
 
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+	<form action="">
+      <label for="name">Name</label>
+      <div>
+        <input type="text" id="name" minlength="3" maxlength="50" required />
+      </div>
 
+      <label for="portfolio">Portfolio</label>
+      <div>
+        <input type="url" id="portfolio" required />
+      </div>
+
+      <label for="favColor">Favorite Color</label>
+      <div>
+        <input type="color" id="favColor" />
+
+        <div class="rangeslider">
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value="10"
+            class="myslider"
+            id="likeness"
+          />
+          <p>Value: <span id="demo"></span></p>
+        </div>
+
+        <script>
+          var rangeslider = document.getElementById("likeness");
+          var output = document.getElementById("demo");
+          output.innerHTML = likeness.value;
+
+          likeness.oninput = function () {
+            output.innerHTML = this.value;
+          };
+        </script>
+      </div>
 </body>
 
 </html>
